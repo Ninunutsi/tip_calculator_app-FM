@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator App</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/resposnsive.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <img src="./assets/images/logo.svg" alt="">
+        <div class="calculator">
+            <div class="tip-details">
+                <div class="bill zero" id="div-bill">
+                    <label for="0" class="bill-label">Bill</label>
+                    <input type="text" dir="rtl" class="bill-input valid" id="bill" placeholder="0">
+                    <img src="./assets/images/icon-dollar.svg" alt="" class="img">
+                </div>
+                <div class="tips">
+                    <p class="bill-label">Select Tip%</p>
+                    <div class="tips-btns">
+                        <input type="button" value="5" class="btn-input">
+                        <input type="button" value="10" class="btn-input">
+                        <input type="button" value="15" class="btn-input">
+                        <input type="button" value="25" class="btn-input">
+                        <input type="button" value="50" class="btn-input">
+                        <input type="text" class="input-txt valid" placeholder="CUSTOM" id="custom">
+                    </div>
+                </div>
+                <div class="num-of-people zero" id="div-people">
+                    <label for="0" class="bill-label">Number of People</label>
+                    <input type="text" class="bill-input valid" dir="rtl" id="people" placeholder="0">
+                    <img src="./assets/images/icon-person.svg" alt="" class="img">
+                </div>
+            </div>
+            <div class="visualization">
+                <div class="vizu-side">
+                    <div class="tip-amount">
+                        <div class="tip">
+                            <p>Tip Amount</p>
+                            <span>/ person</span>
+                        </div>
+                        <p class="amount" id="tip-amount">$0.00</p>
+                    </div>
+    
+                    <div class="tip-amount">
+                        <div class="tip">
+                            <p>Total</p>
+                            <span>/ person</span>
+                        </div>
+                        <p class="amount" id="total">$0.00</p>
+                    </div>
+    
+                </div>
+                <button id="reset" class="reset">RESET</button>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
