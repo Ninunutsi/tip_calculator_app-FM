@@ -1,13 +1,10 @@
 let bill = document.getElementById('bill')
 let people = document.getElementById('people')
 let custom = document.getElementById('custom')
-
 let valid = document.getElementsByClassName('valid')
 let billInput = document.getElementsByClassName('bill-input')
-
 let divBill = document.getElementById('div-bill')
 let divPeople = document.getElementById('div-people')
-
 let zero = document.getElementsByClassName("zero")
 
 for(let i = 0; i < billInput.length; i ++){
@@ -40,17 +37,26 @@ let btnInput = document.getElementsByClassName('btn-input')
 let tipAmount = document.getElementById('tip-amount')
 let total = document.getElementById('total')
 
-bill.addEventListener('input', () => {
-        for(let i = 0; i< btnInput.length; i++){
-            btnInput[i].addEventListener('click', () => {
-                let value = parseFloat(btnInput[i].value.replace('%', ''))
-                let billNumber = parseInt(bill.value)
-                let totalBill = (billNumber * (value / 100)) + billNumber
-                    people.addEventListener('input', () => {
-                        let ceil = totalBill / parseInt(people.value)
-                        let fixed = ceil.toFixed(2)
-                        total.innerHTML = `$${fixed}`
-                    })
+bill.addEventListener('change', () => {
+    let billNumber = parseInt(bill.value)
+    for(let i = 0; i < btnInput.length; i++){
+        btnInput[i].addEventListener('click', () => {
+            let value = parseFloat(btnInput[i].value.replace('%', ''))
+            let totalBill = (billNumber * (value / 100)) + billNumber
+            let totalTip = totalBill - billNumber
+            people.addEventListener('input', () => {
+                if(people.value == 0){
+                    console.log('0')
+                }else{
+                    let totalPerPerson = totalTip / parseInt(people.value)
+                    tipAmount.innerHTML = "$"+totalPerPerson.toFixed(2)
+                    let totalTipPerPerson = totalBill / parseInt(people.value)
+                    total.innerHTML = '$' + totalTipPerPerson.toFixed(2)
+                }
             })
-        }
-    })
+        })
+
+    }
+})
+
+console.log(typeof people.value)
