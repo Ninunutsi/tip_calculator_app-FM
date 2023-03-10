@@ -37,13 +37,20 @@ for(let i = 0; i < valid.length; i ++){
 // gilakebi
 
 let btnInput = document.getElementsByClassName('btn-input')
+let tipAmount = document.getElementById('tip-amount')
+let total = document.getElementById('total')
 
-for(let i = 0; i< btnInput.length; i++){
-    btnInput[i].value = btnInput[i].value + '%'
-    btnInput[i].addEventListener('click', () => {
-        let value = parseFloat(btnInput[i].value.replace('%', ''))
-        console.log(value * 2)
+bill.addEventListener('input', () => {
+        for(let i = 0; i< btnInput.length; i++){
+            btnInput[i].addEventListener('click', () => {
+                let value = parseFloat(btnInput[i].value.replace('%', ''))
+                let billNumber = parseInt(bill.value)
+                let totalBill = (billNumber * (value / 100)) + billNumber
+                    people.addEventListener('input', () => {
+                        let ceil = totalBill / parseInt(people.value)
+                        let fixed = ceil.toFixed(2)
+                        total.innerHTML = `$${fixed}`
+                    })
+            })
+        }
     })
-}
-
-

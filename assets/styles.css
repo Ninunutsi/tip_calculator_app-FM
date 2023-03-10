@@ -79,6 +79,11 @@ main{
     border: none;
 }
 
+.btn-input:focus{
+    background: #9FE8DF;
+    color: #00474B;
+    transition: 1s;
+}
 
 .btn-input:hover{
     background: #9FE8DF;
