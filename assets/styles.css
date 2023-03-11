@@ -198,3 +198,8 @@ main{
     transition: 1s;
     color: #00474B;
 }
+
+.zero{
+    position: relative;
+}
+

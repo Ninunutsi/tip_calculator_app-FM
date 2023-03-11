@@ -1,0 +1,53 @@
+@media(min-width: 767px) and (max-width: 1124px){
+    
+    main{
+        padding: 5vh 0;
+    }
+    
+    .calculator{
+        margin-top: 4vh;
+        width: 97%;
+    }
+}
+
+@media(max-width: 767px){
+    
+    main{
+        padding: 4vh 0;
+    }
+    
+    .calculator{
+        margin-top: 3vh;
+        width: 98%;
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .btn-input{
+        width: 47.5%;
+    }
+    
+    .input-txt{
+        width: 47.5%;
+    }
+    
+    .tip-details{
+        width: 100%;
+    }
+    
+    .visualization{
+        width: 100%;
+    }
+    
+    .vizu-side{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .reset{
+        margin-top: 25px;
+    }
+
+    
+}
